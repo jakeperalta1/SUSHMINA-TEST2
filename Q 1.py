@@ -12,10 +12,15 @@ while True:
 
     x=int(input("Enter your choice: "))
     if x==1:
-        p=input("Enter name: ")
-        if not p.isalpha():
-            print("Only letters are allowed!")
-            continue
+       
+        while True:    
+            p=input("Enter name: ")
+            if all(p.isalpha() or p.isspace() for p in p):
+                break
+            else:
+                print("Error")
+        
+        
         
         q=int(input("Enter your 10-digit phone: "))
         if len(str(q))==10:
@@ -31,7 +36,7 @@ while True:
     elif x==2:
         f= input("Enter name to search:")
         if f in phoneDirectory:
-                print({p:q})
+                print({f:phoneDirectory(p)})
         else:
                  print("Record doesnot exist.")
     
