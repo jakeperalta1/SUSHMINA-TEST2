@@ -24,9 +24,10 @@ while True:
         
         
         
-        q=int(input("Enter your 10-digit phone: "))
+        q=input("Enter your 10-digit phone: ")
+        
         #allowing 10 digits only
-        if len(str(q))==10:
+        if len(str(q))==10 or q.isdigit() :
             
                 phoneDirectory.update({p:q})
         else:
@@ -52,10 +53,13 @@ while True:
         
     elif x==4:
         g= input("Enter name:")
-        del phoneDirectory[g]
-        print("Record deleted")
         if phoneDirectory == {}:
             print("Record is empty.")
+        else:
+            del phoneDirectory[g]
+            print("Record deleted")
+        #if phoneDirectory == {}:
+           # print("Record is empty.")
     
     elif x==5:
         break
