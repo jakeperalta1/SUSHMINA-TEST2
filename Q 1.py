@@ -3,7 +3,7 @@ phoneDirectory={}
 
 while True:
     
-    
+    print("Menu")
     print("1. Add a record")
     print("2. Search a record")
     print("3. Update a record")
@@ -13,6 +13,9 @@ while True:
     x=int(input("Enter your choice: "))
     if x==1:
         p=input("Enter name: ")
+        if not p.isalpha():
+            print("Only letters are allowed!")
+            continue
         
         q=int(input("Enter your 10-digit phone: "))
         if len(str(q))==10:
