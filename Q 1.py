@@ -1,4 +1,5 @@
 print("WELCOME TO THE GRANN'S PHONE DIRECTORY") 
+#creating empty list
 phoneDirectory={}
 
 while True:
@@ -15,6 +16,7 @@ while True:
        
         while True:    
             p=input("Enter name: ")
+            #allowing only letters and space as input
             if all(p.isalpha() or p.isspace() for p in p):
                 break
             else:
@@ -23,6 +25,7 @@ while True:
         
         
         q=int(input("Enter your 10-digit phone: "))
+        #allowing 10 digits only
         if len(str(q))==10:
             
                 phoneDirectory.update({p:q})
