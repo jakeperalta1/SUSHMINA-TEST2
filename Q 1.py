@@ -1,8 +1,9 @@
+print("WELCOME TO THE GRANN'S PHONE DIRECTORY") 
 phoneDirectory={}
 
 while True:
     
-    print("WELCOME TO THE GRANN'S PHONE DIRECTORY") 
+    
     print("1. Add a record")
     print("2. Search a record")
     print("3. Update a record")
@@ -12,7 +13,16 @@ while True:
     x=int(input("Enter your choice: "))
     if x==1:
         p=input("Enter name: ")
+        
         q=int(input("Enter your 10-digit phone: "))
+        if len(str(q))==10:
+            
+                phoneDirectory.update({p:q})
+        else:
+                print("Invalid digit of number. ")
+        
+                continue
+	        
         print("Record added")
     
     elif x==2:
@@ -35,6 +45,12 @@ while True:
         print("Record deleted")
         if phoneDirectory == {}:
             print("Record is empty.")
+    
+    elif x==5:
+        break
+    
+    else:
+        print("Invalid option.")
         
             
         
